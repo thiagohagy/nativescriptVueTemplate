@@ -13,7 +13,7 @@ import {TNSFontIcon, fonticon} from 'nativescript-fonticon';
 
 TNSFontIcon.debug = true;
 TNSFontIcon.paths = {
-  'fa': './font-awesome.css',
+  'fa': './css/font-awesome.css',
 };
 TNSFontIcon.loadCss();
 
