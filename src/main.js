@@ -6,6 +6,7 @@ import store from './store';
 
 import './styles.scss';
 
+import appMixin from './shared/appMixin';
 
 // Uncomment the following to see NativeScript-Vue output logs
 Vue.config.silent = false;
@@ -20,9 +21,6 @@ TNSFontIcon.loadCss();
 Vue.filter('fonticon', fonticon);
 
 new Vue({
-
   router,
-
   store,
-
 }).$start();
