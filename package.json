@@ -19,6 +19,7 @@
   "dependencies": {
     "nativescript-fonticon": "^1.1.1",
     "nativescript-theme-core": "^1.0.4",
+    "nativescript-toast": "^1.4.6",
     "nativescript-vue": "^1.3.1",
     "tns-core-modules": "~3.4.1",
     "vue-router": "^3.0.1",

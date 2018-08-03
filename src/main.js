@@ -6,14 +6,14 @@ import store from './store';
 
 import './styles.scss';
 
+
 // Uncomment the following to see NativeScript-Vue output logs
-//Vue.config.silent = false;
+Vue.config.silent = false;
 
 import {TNSFontIcon, fonticon} from 'nativescript-fonticon';
-
 TNSFontIcon.debug = true;
 TNSFontIcon.paths = {
-  'fa': './css/font-awesome.css',
+  'fa': './font-awesome.css',
 };
 TNSFontIcon.loadCss();
 
