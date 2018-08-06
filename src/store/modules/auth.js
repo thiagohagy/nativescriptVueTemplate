@@ -12,7 +12,16 @@ const mutations = {
 };
 
 const actions = {
-  login: ({commit}) => commit('login'),
+  login: ({commit}) => {
+    console.log('login or not to login, thats the question');
+    return new Promise((resolve, reject) => {
+      commit('login');
+      resolve();
+      // reject();
+      // make request and store token, then inserto on axios the Authentication token on every request
+    });
+
+  },
   logout: ({commit}) => commit('logout'),
 };
 

@@ -16,6 +16,16 @@ import Toaster from 'nativescript-toast';
 import { mapGetters } from 'vuex';
 
 export default {
+  methods: {
+    ...mapGetters([
+      'isLogged'
+    ]),
+  },
+  mounted(){
+    if(!this.isLogged()){
+      this.$router.push('/login');
+    }
+  }
 }
 
 </script>

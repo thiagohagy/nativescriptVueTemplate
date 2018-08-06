@@ -19,18 +19,5 @@ Vue.mixin({
       search: 'fa-search',
       envelope: 'fa-envelope-o',
     }
-
-    if (!this.isLogged()) {
-      console.log(`User not logged "mounted"`);
-      // this.$router.push('/login');
-    }
   },
-  watch: {
-    '$route': function (from, to) {
-      if (!this.isLogged()) {
-        console.log(`User not logged "watch route"`);
-        // this.$router.push('/login');
-      }
-    }
-  }
 })

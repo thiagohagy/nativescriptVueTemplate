@@ -41,8 +41,13 @@ export default {
       this.$router.push('/home');
     },
     makeLogin(){
-      // this.login();
-      this.$router.push('/home');
+      this.login(this.form)
+      .then((resp)=> {
+        this.$router.push('/home');
+      })
+      .catch(()=>{
+        Toaster.makeText('User not found').show();
+      })
     }
   }
 }
