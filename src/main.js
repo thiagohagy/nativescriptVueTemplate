@@ -1,7 +1,7 @@
 import Vue from 'nativescript-vue';
 import router from './router';
-import http     from './shared/http';
-import appMixin from './shared/appMixin';
+import http     from './shared/services/http';
+import appMixin from './shared/services/appMixin';
 import store from './store';
 
 import './styles.scss';
