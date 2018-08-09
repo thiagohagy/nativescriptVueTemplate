@@ -5,6 +5,7 @@ Vue.use(VueRouter);
 
 import Home from '../components/dashboard/Home';
 import Login from '../components/auth/Login';
+import Register from '../components/auth/Register';
 
 const router = new VueRouter({
   pageRouting: true,
@@ -14,6 +15,13 @@ const router = new VueRouter({
       component: Home,
       meta: {
         title: 'Home',
+      },
+    },
+    {
+      path: '/register',
+      component: Register,
+      meta: {
+        title: 'Register',
       },
     },
     {

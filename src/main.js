@@ -1,12 +1,10 @@
 import Vue from 'nativescript-vue';
-
 import router from './router';
-
+import http     from './shared/http';
+import appMixin from './shared/appMixin';
 import store from './store';
 
 import './styles.scss';
-
-import appMixin from './shared/appMixin';
 
 // Uncomment the following to see NativeScript-Vue output logs
 Vue.config.silent = false;

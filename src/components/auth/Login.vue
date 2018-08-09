@@ -8,7 +8,7 @@
       <TextField width='90%' v-model='form.login'    hint='Login...'  />
 			<TextField width='90%' v-model='form.password' hint='Senha' secure='true' />
       <Button class="btn btn-primary" text="Login" @tap="makeLogin" />
-      <Button class="btn btn-primary" text="Register" @tap="register" />
+      <!-- <Button class="btn btn-primary" text="Register" @tap="register" /> -->
 
 		</StackLayout>
 
@@ -19,7 +19,7 @@
 <script>
 
 import Toaster from 'nativescript-toast';
-import { mapGetters, mapActions } from 'vuex';
+import { mapGetters, mapMutations } from 'vuex';
 
 export default {
   data () {
@@ -34,20 +34,22 @@ export default {
     ...mapGetters([
       'isLogged',
     ]),
-    ...mapActions([
+    ...mapMutations([
       'login',
     ]),
     register(){
-      this.$router.push('/home');
+      this.$router.push('/register');
     },
     makeLogin(){
-      this.login(this.form)
-      .then((resp)=> {
-        this.$router.push('/home');
-      })
-      .catch(()=>{
-        Toaster.makeText('User not found').show();
-      })
+      this.$http.post("login", this.form ).then((response) => {
+        if (response.success) {
+          this.login(response);
+          this.$router.push('/home');
+        } else {
+          Toaster.makeText('User not found').show();
+        }
+      });
+
     }
   }
 }

@@ -1,37 +1,27 @@
+
 const state = {
   IS_LOGGED: false,
+  AUTH_TOKEN: false,
 };
 
 const mutations = {
-  login (state) {
+  login(state, payload) {
     state.IS_LOGGED = true;
+    state.AUTH_TOKEN = payload.token;
   },
   logout() {
     state.IS_LOGGED = false;
-  }
-};
-
-const actions = {
-  login: ({commit}) => {
-    console.log('login or not to login, thats the question');
-    return new Promise((resolve, reject) => {
-      commit('login');
-      resolve();
-      // reject();
-      // make request and store token, then inserto on axios the Authentication token on every request
-    });
-
+    state.AUTH_TOKEN = false;
   },
-  logout: ({commit}) => commit('logout'),
 };
 
 const getters = {
   isLogged: () => state.IS_LOGGED,
+  authToken: () => state.AUTH_TOKEN,
 };
 
 export default {
   state,
   getters,
   mutations,
-  actions,
 };
