@@ -8,6 +8,7 @@
       <TextField width='90%' v-model='form.login'    hint='Login...'  />
 			<TextField width='90%' v-model='form.password' hint='Senha' secure='true' />
       <Button class="btn btn-primary" text="Login" @tap="makeLogin" />
+      <Button class="btn btn-primary" text="Facebook login" @tap="facebookLogin" />
       <!-- <Button class="btn btn-primary" text="Register" @tap="register" /> -->
 
 		</StackLayout>
@@ -20,6 +21,7 @@
 
 import Toaster from 'nativescript-toast';
 import { mapGetters, mapMutations } from 'vuex';
+import * as tnsOAuthModule from "nativescript-oauth";
 
 export default {
   data () {
@@ -48,6 +50,16 @@ export default {
         } else {
           Toaster.makeText('User not found').show();
         }
+      });
+    },
+    facebookLogin(){
+      tnsOAuthModule
+      .ensureValidToken()
+      .then((token) => {
+        console.log("token: " + token);
+      })
+      .catch(er => {
+        //do something with the error
       });
     },
   },
