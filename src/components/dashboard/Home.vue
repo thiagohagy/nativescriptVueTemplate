@@ -21,7 +21,11 @@ export default {
       'isLogged'
     ]),
   },
-  mounted(){
+  beforeMount(){
+    this.$http.get("v1/categoria/all").then((response) => {
+      console.log(response);
+    });
+
     if(!this.isLogged()){
       this.$router.push('/login');
     }

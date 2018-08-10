@@ -12,18 +12,16 @@ const loaderOptions = {
   }
 }
 
-function getToken() {
-  return store.getters.authToken;
-}
+let baseURL = 'https://hungry-parrot-96.localtunnel.me';
 
 const axios = Axios.create({
-  baseURL: 'https://spotty-dolphin-18.localtunnel.me/' + 'api'
-})
+  baseURL: `${baseURL}/api/`
+});
 
 // Intercept the request to make sure the token is injected into the header.
 // request start
 axios.interceptors.request.use(config => {
-  config.headers.Authorization = getToken();
+  config.headers.Authorization = store.getters.authToken;
   loader.show(loaderOptions);
   return config;
 })

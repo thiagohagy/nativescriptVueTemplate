@@ -49,7 +49,6 @@ export default {
           Toaster.makeText('User not found').show();
         }
       });
-
     }
   }
 }
