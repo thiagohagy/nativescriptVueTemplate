@@ -18,6 +18,7 @@ Vue.mixin({
       music: 'fa-music',
       search: 'fa-search',
       envelope: 'fa-envelope-o',
+      tag: 'fa-tags',
     }
   },
 })

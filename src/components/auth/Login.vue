@@ -26,7 +26,7 @@ export default {
     return {
       form:{
         login:'',
-        password:''
+        password:'',
       }
     }
   },
@@ -49,7 +49,14 @@ export default {
           Toaster.makeText('User not found').show();
         }
       });
+    },
+  },
+  mounted(){
+    this.form = {
+      login: 'Admin',
+      password: 'admin',
     }
+  //   this.makeLogin()
   }
 }
 </script>

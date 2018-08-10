@@ -1,8 +1,11 @@
 import Vue from 'nativescript-vue'
 import Axios from 'axios'
 import store from '../../store/index'
-import { LoadingIndicator } from "nativescript-loading-indicator";
+import Toaster from 'nativescript-toast'
+import { LoadingIndicator } from "nativescript-loading-indicator"
+import router from './../../router'
 
+// loading indicator config
 const loader = new LoadingIndicator();
 const loaderOptions = {
   message: 'Loading...',
@@ -12,18 +15,27 @@ const loaderOptions = {
   }
 }
 
-let baseURL = 'https://hungry-parrot-96.localtunnel.me';
+// router that don't need authenctication
+let publicRoutes = ['login', 'register'];
 
+let baseURL = 'https://jolly-ape-73.localtunnel.me';
 const axios = Axios.create({
   baseURL: `${baseURL}/api/`
 });
 
-// Intercept the request to make sure the token is injected into the header.
 // request start
 axios.interceptors.request.use(config => {
   config.headers.Authorization = store.getters.authToken;
-  loader.show(loaderOptions);
+
+  if (publicRoutes.indexOf(config.url) && !store.getters.isLogged) {
+    Toaster.makeText("You are not logged in").show();
+    router.push('login');
+  } else {
+    loader.show(loaderOptions);
+  }
+
   return config;
+
 })
 
 // request end

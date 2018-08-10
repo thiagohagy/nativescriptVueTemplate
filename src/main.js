@@ -5,6 +5,7 @@ import appMixin from './shared/services/appMixin';
 import store from './store';
 
 import './styles.scss';
+import './assets/css/custom.css';
 
 // Uncomment the following to see NativeScript-Vue output logs
 Vue.config.silent = false;

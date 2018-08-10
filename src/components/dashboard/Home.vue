@@ -1,11 +1,13 @@
 <template>
-  <Page class="page" actionBarHidden="true">
+  <Page >
+    <ActionBar title="Tags" class="action-bar">
+    </ActionBar>
 
-		<StackLayout orientation="vertical" verticalAlignment="center" >
-      <Image id='logo' src='~/images/logo.png' width='50%' />
-      <!-- <Label class='fa' :text="icons.envelope | fonticon"/> -->
-		</StackLayout>
-
+    <ListView for="item in form.tags">
+      <v-template>
+        <Label :text="item.name" class="listItem"/>
+      </v-template>
+    </ListView>
   </Page>
 </template>
 
@@ -16,14 +18,26 @@ import Toaster from 'nativescript-toast';
 import { mapGetters } from 'vuex';
 
 export default {
+  data(){
+    return {
+      form:{
+        tags:[]
+      }
+    }
+  },
   methods: {
     ...mapGetters([
       'isLogged'
     ]),
   },
   beforeMount(){
-    this.$http.get("v1/categoria/all").then((response) => {
-      console.log(response);
+    console.log(this.icons)
+    this.$http.get("v1/tag/all").then((response) => {
+      if(response.total > 0) {
+        this.form.tags = response.data;
+      } else {
+        Toaster.makeText('Any tag was found').show()
+      }
     });
 
     if(!this.isLogged()){

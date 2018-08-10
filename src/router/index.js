@@ -13,6 +13,7 @@ const router = new VueRouter({
     {
       path: '/home',
       component: Home,
+      name:'home',
       meta: {
         title: 'Home',
       },
@@ -20,13 +21,15 @@ const router = new VueRouter({
     {
       path: '/register',
       component: Register,
+      name:'register',
       meta: {
         title: 'Register',
       },
     },
     {
-      path: '/Login',
+      path: '/login',
       component: Login,
+      name:'login',
       meta: {
         title: 'Login',
       },
