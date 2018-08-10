@@ -56,7 +56,7 @@ export default {
       login: 'Admin',
       password: 'admin',
     }
-  //   this.makeLogin()
+    // this.makeLogin()
   }
 }
 </script>

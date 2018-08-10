@@ -31,7 +31,6 @@ export default {
     ]),
   },
   beforeMount(){
-    console.log(this.icons)
     this.$http.get("v1/tag/all").then((response) => {
       if(response.total > 0) {
         this.form.tags = response.data;

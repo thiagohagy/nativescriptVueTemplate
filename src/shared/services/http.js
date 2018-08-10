@@ -18,7 +18,7 @@ const loaderOptions = {
 // router that don't need authenctication
 let publicRoutes = ['login', 'register'];
 
-let baseURL = 'https://jolly-ape-73.localtunnel.me';
+let baseURL = 'https://meufilhote.localtunnel.me';
 const axios = Axios.create({
   baseURL: `${baseURL}/api/`
 });
@@ -27,7 +27,7 @@ const axios = Axios.create({
 axios.interceptors.request.use(config => {
   config.headers.Authorization = store.getters.authToken;
 
-  if (publicRoutes.indexOf(config.url) && !store.getters.isLogged) {
+  if ((publicRoutes.indexOf(config.url) == -1) && !store.getters.isLogged) { // if is not a public route and the user is not logged
     Toaster.makeText("You are not logged in").show();
     router.push('login');
   } else {
