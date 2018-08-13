@@ -40,7 +40,7 @@ export default {
     });
 
     if(!this.isLogged()){
-      this.$router.push('/login');
+      this.$router.push('login');
     }
   }
 }

@@ -16,17 +16,19 @@ const loaderOptions = {
 }
 
 // router that don't need authenctication
-let publicRoutes = ['login', 'register'];
+let publicRoutes = ['cli/auth', 'cli/add'];
 
-let baseURL = 'https://meufilhote.localtunnel.me';
+let baseURL = 'https://meusistema.localtunnel.me';
 const axios = Axios.create({
   baseURL: `${baseURL}/api/`
 });
 
 // request start
 axios.interceptors.request.use(config => {
-  config.headers.Authorization = store.getters.authToken;
+  console.log(config.baseURL);
+  console.log(config.url);
 
+  config.headers.Authorization = store.getters.authToken;
   if ((publicRoutes.indexOf(config.url) == -1) && !store.getters.isLogged) { // if is not a public route and the user is not logged
     Toaster.makeText("You are not logged in").show();
     router.push('login');
