@@ -45,6 +45,9 @@ axios.interceptors.response.use(response => {
   loader.hide();
   response = response.data;
   return response;
+}, (error) => {
+  loader.hide();
+  Toaster.makeText(error.toString()).show();
 });
 
 const http = {
