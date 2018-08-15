@@ -7,8 +7,13 @@
 
       <TextField width='90%' v-model='form.login'    hint='Login...'  />
 			<TextField width='90%' v-model='form.password' hint='Senha' secure='true' />
+
+      <WrapLayout orientation="horizontal" verticalAlignment="center" width='90%' >
+        <Switch v-model="keepLogin" />
+				<Label text="Keep me logged "></Label>
+			</WrapLayout>
+
       <Button class="btn btn-primary" text="Login" @tap="makeLogin" />
-      <!-- <Button class="btn btn-primary" text="Facebook login" @tap="facebookLogin" /> -->
       <Button class="btn btn-primary" text="Register" @tap="register" />
 
 		</StackLayout>
@@ -21,15 +26,15 @@
 
 import Toaster from 'nativescript-toast';
 import { mapGetters, mapMutations } from 'vuex';
-// import * as tnsOAuthModule from "nativescript-oauth";
 
 export default {
   data () {
     return {
       form:{
-        login:'',
-        password:'',
-      }
+        login: 'login',
+        password: '123',
+      },
+      keepLogin: false,
     }
   },
   methods: {
@@ -52,24 +57,7 @@ export default {
         }
       });
     },
-    // facebookLogin(){
-    //   tnsOAuthModule
-    //   .ensureValidToken()
-    //   .then((token) => {
-    //     console.log("token: " + token);
-    //   })
-    //   .catch(er => {
-    //     Toaster.makeText('Error to connect with facebook account').show();
-    //   });
-    // },
   },
-  mounted(){
-    this.form = {
-      login: 'login',
-      password: '123',
-    }
-    // this.makeLogin()
-  }
 }
 </script>
 

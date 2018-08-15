@@ -3,9 +3,20 @@ import VueRouter from 'vue-router';
 
 Vue.use(VueRouter);
 
-import Home from '../components/dashboard/Home';
 import Login from '../components/auth/Login';
-import Register from '../components/auth/Register';
+
+//lazy oading
+const Home = resolve => {
+  require.ensure(['../components/dashboard/Home'], ()=> {
+    resolve(require('../components/dashboard/Home'));
+  });
+};
+
+const Register = resolve => {
+  require.ensure(['../components/auth/Register'], () => {
+    resolve(require('../components/auth/Register'));
+  });
+};
 
 const router = new VueRouter({
   pageRouting: true,
@@ -38,6 +49,6 @@ const router = new VueRouter({
   ],
 });
 
-router.replace('/home');
+router.replace('/login');
 
 module.exports = router;
