@@ -50,6 +50,8 @@ export default {
     makeLogin(){
       this.$http.post("cli/auth", this.form ).then((response) => {
         if (response.success) {
+          let data = response;
+          data.keepLogin = this.keepLogin;
           this.login(response);
           this.$router.push('home');
         } else {
@@ -58,6 +60,7 @@ export default {
       });
     },
   },
+  
 }
 </script>
 

@@ -1,3 +1,4 @@
+import * as  applicationSettings from 'application-settings'
 
 const state = {
   IS_LOGGED: false,
@@ -6,8 +7,13 @@ const state = {
 
 const mutations = {
   login(state, payload) {
+    console.log('make login');
     state.IS_LOGGED = true;
     state.AUTH_TOKEN = payload.token;
+
+    if (payload.keepLogin) {
+     applicationSettings.setString('login',JSON.stringify(payload));
+    }
   },
   logout() {
     state.IS_LOGGED = false;
