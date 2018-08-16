@@ -1,23 +1,17 @@
 
 import Vue from 'nativescript-vue';
-import { mapGetters } from 'vuex';
 
 Vue.mixin({
-  methods:{
-    ...mapGetters([
-      'isLogged',
-    ]),
-  },
   data() {
     return {
       icons: {},
     }
   },
   mounted() {
+    // here you insert the icons that you want to use in the app
     this.icons = {
-      music: 'fa-music',
       search: 'fa-search',
-      envelope: 'fa-envelope-o',
+      logout: 'fa-sign-out',
       tag: 'fa-tags',
     }
   },

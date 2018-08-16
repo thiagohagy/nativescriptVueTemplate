@@ -10,3 +10,6 @@
 .fa-envelope-o:before {
   content: "\f003";
 }
+.fa-sign-out:before {
+  content: "\f08b";
+}

@@ -12,7 +12,7 @@ const mutations = {
     state.AUTH_TOKEN = payload.token;
 
     if (payload.keepLogin) {
-     applicationSettings.setString('login',JSON.stringify(payload));
+      applicationSettings.setString('login',JSON.stringify(payload));
     } else {
       applicationSettings.setString('login', '');
     }
@@ -20,6 +20,7 @@ const mutations = {
   logout() {
     state.IS_LOGGED = false;
     state.AUTH_TOKEN = false;
+    applicationSettings.setString('login', '');
   },
 };
 

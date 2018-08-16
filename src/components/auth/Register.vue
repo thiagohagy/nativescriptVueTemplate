@@ -21,7 +21,7 @@
 
 
 <script>
-  import Toaster from 'nativescript-toast';
+  import Toast from 'nativescript-toast';
 
   export default {
     data () {
@@ -39,14 +39,14 @@
       register(){
 
         if((!this.form.password || !this.form.login) || (this.form.password != this.form.passwordConfirm)) {
-            Toaster.makeText('Inform login, password, and password confirm').show();
+            Toast.makeText('Inform login, password, and password confirm').show();
           } else {
             this.$http.post('cli/add', this.form).then((response) => {
               if (response.success) {
-                Toaster.makeText('New user created').show();
+                Toast.makeText('New user created').show();
                 this.$router.push('login');
               } else {
-                Toaster.makeText(response.err).show();
+                Toast.makeText(response.err).show();
               }
             });
           }
@@ -58,6 +58,3 @@
   }
 
 </script>
-
-<style scoped>
-</style>
