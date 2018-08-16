@@ -1,6 +1,16 @@
-# NativeScript-Vue Application
+# NativeScript-Vue Application with some ultilities for starting a new app:
 
-> A native application built with NativeScript-Vue
+* Auth interceptor to redirect to login page when user is not authenticated
+* Auto login and "keep me logged" option
+* Http interceptor to create authenticated routes
+* Loading indicator that start and stop with http requests
+* Side Drawer menu as component with auto naming of views
+* Font icon with filter
+* Global mixin
+* Centralized Router with lazy loading
+* Centralized state manager with Vuex
+* Login, register and home page pre built
+* Toast notifications
 
 ## Usage
 
