@@ -13,6 +13,8 @@ const mutations = {
 
     if (payload.keepLogin) {
      applicationSettings.setString('login',JSON.stringify(payload));
+    } else {
+      applicationSettings.setString('login', '');
     }
   },
   logout() {

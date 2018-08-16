@@ -16,7 +16,8 @@
     "nativescript-loading-indicator": "^2.4.0",
     "nativescript-loading-indicator-new": "^2.1.0",
     "nativescript-loading-indicator-ssi": "^2.5.2",
-    "nativescript-oauth": "^2.1.7"
+    "nativescript-oauth": "^2.1.7",
+    "nativescript-ui-sidedrawer": "^4.3.0"
   },
   "devDependencies": {
     "babel-traverse": "6.26.0",

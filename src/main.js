@@ -12,13 +12,16 @@ import './assets/css/custom.css';
 application.on(application.launchEvent, (args) => {
   if (args.android) {
       let loginStored = applicationSettings.getString('login');
-      if (loginStored) {
+      if (loginStored && loginStored != '') {
         let loginData = JSON.parse(loginStored);
         store.commit('login', loginData);
         router.push('home');
       }
   }
 });
+
+
+Vue.registerElement('RadSideDrawer', () => require('nativescript-ui-sidedrawer').RadSideDrawer);
 
 // Uncomment the following to see NativeScript-Vue output logs
 Vue.config.silent = false;
