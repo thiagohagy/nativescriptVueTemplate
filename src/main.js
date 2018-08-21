@@ -8,6 +8,7 @@ import * as applicationSettings from 'application-settings';
 
 import './styles.scss';
 import './assets/css/custom.css';
+import './assets/css/animate.min.css';
 
 // auto login if user has set keep login
 application.on(application.launchEvent, (args) => {

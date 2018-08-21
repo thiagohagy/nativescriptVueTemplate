@@ -18,7 +18,7 @@ const loaderOptions = {
 // router that don't need autentication
 let publicRoutes = ['cli/auth', 'cli/add'];
 
-let baseURL = 'https://sharp-liger-57.localtunnel.me';
+let baseURL = 'https://lazy-dog-22.localtunnel.me';
 const axios = Axios.create({
   baseURL: `${baseURL}/api/`
 });

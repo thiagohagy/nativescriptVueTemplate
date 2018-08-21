@@ -19,6 +19,7 @@
   "dependencies": {
     "@essent/nativescript-loading-indicator": "^2.3.4-2",
     "ajv": "^6.5.2",
+    "animate.css": "^3.7.0",
     "axios": "^0.18.0",
     "nativescript-fonticon": "^1.1.1",
     "nativescript-loading-indicator": "^2.4.0",

@@ -1,7 +1,7 @@
 <template>
   <Page class="page" actionBarHidden="true">
 
-		<StackLayout orientation="vertical" verticalAlignment="center" >
+		<StackLayout orientation="vertical" verticalAlignment="center"  class="animate bounceIn">
       <Image id='logo' src='~/images/logo.png' width='50%' />
       <Label id='logoText' textAlignment='center' >User registration</Label>
 
