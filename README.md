@@ -12,6 +12,24 @@
 * Login, register and home page pre built
 * Toast notifications
 
+# How it works 
+(soon)
+
+# Screenshots
+
+
+<img title='Login Page' style="float: left;" width='250px'  border='5px solid black' src="https://raw.githubusercontent.com/thiagohagy/nativescriptVueTemplate/master/screenshots/login.png">
+
+<img title='Loader for requests ' style="float: left;" width='250px'   border='5px solid black' src="https://raw.githubusercontent.com/thiagohagy/nativescriptVueTemplate/master/screenshots/loading.png">
+
+<img title='Register page' style="float: left;" width='250px'  border='5px solid black' src="https://raw.githubusercontent.com/thiagohagy/nativescriptVueTemplate/master/screenshots/register.png">
+
+<img title='List page after user login' style="float: left;" width='250px'   border='5px solid black' src="https://raw.githubusercontent.com/thiagohagy/nativescriptVueTemplate/master/screenshots/list.png">
+
+<img title='SideDrawer menu' style="float: left;" border='5px solid black' width='250px' src="https://raw.githubusercontent.com/thiagohagy/nativescriptVueTemplate/master/screenshots/sideDrawer.png">
+
+<hr width='100%'/>
+
 ## Usage
 
 ``` bash
