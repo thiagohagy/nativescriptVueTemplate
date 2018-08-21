@@ -15,20 +15,6 @@
 # How it works 
 (soon)
 
-# Screenshots
-
-
-<img title='Login Page' style="float: left;" width='250px'  border='5px solid black' src="https://raw.githubusercontent.com/thiagohagy/nativescriptVueTemplate/master/screenshots/login.png">
-
-<img title='Loader for requests ' style="float: left;" width='250px'   border='5px solid black' src="https://raw.githubusercontent.com/thiagohagy/nativescriptVueTemplate/master/screenshots/loading.png">
-
-<img title='Register page' style="float: left;" width='250px'  border='5px solid black' src="https://raw.githubusercontent.com/thiagohagy/nativescriptVueTemplate/master/screenshots/register.png">
-
-<img title='List page after user login' style="float: left;" width='250px'   border='5px solid black' src="https://raw.githubusercontent.com/thiagohagy/nativescriptVueTemplate/master/screenshots/list.png">
-
-<img title='SideDrawer menu' style="float: left;" border='5px solid black' width='250px' src="https://raw.githubusercontent.com/thiagohagy/nativescriptVueTemplate/master/screenshots/sideDrawer.png">
-
-<hr width='100%'/>
 
 ## Usage
 
@@ -55,3 +41,15 @@ npm run clean
 > When invoking the various npm scripts, omitting the platform will attempt to launch `tns` for both platforms, which will only work in a properly configured OSX environment.
 
 For detailed instructions, see https://github.com/nativescript-vue/vue-cli-template
+
+
+# Screenshots
+
+
+Login page                 |  Loading while wait request to finish     |  Register page 
+:-------------------------:|:-------------------------:|:-------------------------:
+![](https://raw.githubusercontent.com/thiagohagy/nativescriptVueTemplate/master/screenshots/login.png)  |  ![](https://raw.githubusercontent.com/thiagohagy/nativescriptVueTemplate/master/screenshots/loading.png) |  ![](https://raw.githubusercontent.com/thiagohagy/nativescriptVueTemplate/master/screenshots/register.png)
+
+Data list             |  SideDrawer menu with routes and logout
+:-------------------------:|:-------------------------:
+![](https://raw.githubusercontent.com/thiagohagy/nativescriptVueTemplate/master/screenshots/list.png)  |  ![](https://raw.githubusercontent.com/thiagohagy/nativescriptVueTemplate/master/screenshots/sideDrawer.png)
