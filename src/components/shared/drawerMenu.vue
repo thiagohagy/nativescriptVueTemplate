@@ -36,7 +36,6 @@
   export default {
     data(){
       return {
-        menuIsOpen: false,
         pageName: '',
       }
     },
@@ -46,12 +45,7 @@
       ]),
       toogleDrawerMenu() {
         // toogle menu
-        if(this.menuIsOpen) {
-          this.$refs.drawer.nativeView.closeDrawer();
-        } else {
-          this.$refs.drawer.nativeView.showDrawer();
-        }
-        this.menuIsOpen = !this.menuIsOpen;
+        this.$refs.drawer.nativeView.toggleDrawerState();
       },
       makeLogout(){
         // clear login data and redirect
